@@ -13,7 +13,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'activeadmin'
 gem 'twitter-bootstrap-rails'
-gem "ckeditor", :git => 'https://github.com/galetahub/ckeditor.git'
+gem "ckeditor", :git => 'https://github.com/galetahub/ckeditor.git' 
 gem 'rack-pjax'
 gem 'devise'
 gem 'rack-pjax'
