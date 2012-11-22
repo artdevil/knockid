@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+/* base css */
+html,body{
+	padding-top: 20px;
+}
+
+ #map_canvas {
+        margin: 0;
+        padding: 0;
+        height: 300px;
+        width: 300px;
+      }

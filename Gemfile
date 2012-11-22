@@ -18,6 +18,7 @@ gem 'rack-pjax'
 gem 'devise'
 gem 'rack-pjax'
 gem 'less-rails'
+gem 'gmaps4rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
