@@ -23,3 +23,7 @@ html,body{
         height: 300px;
         width: 300px;
       }
+
+.date{
+	width: 33%;
+}
