@@ -27,3 +27,7 @@ html,body{
 .date{
 	width: 33%;
 }
+
+abbr{
+	color: red;
+}

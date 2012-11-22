@@ -9,7 +9,9 @@
     <%= f.input :birthday, :required => true, :autofocus => true, :input_html => {:class => "input-block-level"} %>
     <%= f.input :password, :required => true, :input_html => {:class => "input-block-level"} %>
     <%= f.input :password_confirmation, :required => true, :input_html => {:class => "input-block-level"} %>
-    <%= f.button :submit, "Sign up" %>
-    <%= render "devise/shared/links" %>
+    <%= f.button :submit, "Sign up",:class => "btn btn-primary btn-large" %>
+    <div>
+    	<%= render "devise/shared/links" %>
+    </div>
 <% end %>
 </div>
