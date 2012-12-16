@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  address: MyString
+  latitude: MyString
+  longnitude: MyString
+  home_avatar: MyString
+  verification: MyString
+  confirm: false
+
+two:
+  user_id: 1
+  address: MyString
+  latitude: MyString
+  longnitude: MyString
+  home_avatar: MyString
+  verification: MyString
+  confirm: false

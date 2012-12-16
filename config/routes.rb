@@ -1,4 +1,5 @@
 Knockid::Application.routes.draw do
+  resources :locations
   resources :pages
   root :to => "pages#home"
 

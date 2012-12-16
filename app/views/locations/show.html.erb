@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @location.user_id %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @location.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <b>Longnitude:</b>
+  <%= @location.longnitude %>
+</p>
+
+<p>
+  <b>Home avatar:</b>
+  <%= @location.home_avatar %>
+</p>
+
+<p>
+  <b>Verification:</b>
+  <%= @location.verification %>
+</p>
+
+<p>
+  <b>Confirm:</b>
+  <%= @location.confirm %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
