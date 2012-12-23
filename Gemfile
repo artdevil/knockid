@@ -20,6 +20,8 @@ gem 'rack-pjax'
 gem 'less-rails'
 gem 'gmaps4rails'
 gem "acts_as_follower"
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

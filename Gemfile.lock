@@ -48,6 +48,7 @@ GEM
     activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_follower (0.1.1)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
@@ -60,6 +61,10 @@ GEM
     carrierwave (0.7.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    client_side_validations (3.2.1)
+    client_side_validations-simple_form (2.0.1)
+      client_side_validations (~> 3.2.0)
+      simple_form (~> 2.0.3)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -199,9 +204,12 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_follower
   cancan
   carrierwave
   ckeditor!
+  client_side_validations
+  client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
   devise
   gmaps4rails
