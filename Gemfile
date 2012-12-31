@@ -22,6 +22,7 @@ gem 'gmaps4rails'
 gem "acts_as_follower"
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem "toastr-rails"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -40,6 +41,7 @@ group :test do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

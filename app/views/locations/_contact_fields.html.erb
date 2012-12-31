@@ -1,0 +1,10 @@
+<fieldset>
+	<div class="row">
+		<div class="span3">
+			<%= f.input :type, :as => :select, :collection => ["home", "handphone"], :include_blank => false %>
+		</div>
+		<div class="span3">
+			<%= f.input :number %>
+		</div>
+	</div>
+</fieldset>

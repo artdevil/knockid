@@ -8,14 +8,18 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap
+ *= require jquery.ui.all
+ *= require toastr
  *= require_self
- *= require_tree .
+ *= require bootstrap.responsive
  */
 
 /* base css */
-html,body{
-	padding-top: 20px;
-}
+body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
 
  #map_canvas {
         margin: 0;
@@ -23,11 +27,15 @@ html,body{
         height: 300px;
         width: 300px;
       }
-
 .date{
 	width: 33%;
 }
 
 abbr{
 	color: red;
+}
+
+.back-btn{
+	color: white;
+	margin-left: 5px;
 }

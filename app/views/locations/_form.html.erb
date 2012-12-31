@@ -1,17 +1,17 @@
-<%= simple_form_for(@location) do |f| %>
+<%= simple_form_for(@location, :validate => true ) do |f| %>
+  <% @location.build_contacts unless @location.contacts %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :user_id %>
     <%= f.input :address %>
     <%= f.input :latitude %>
     <%= f.input :longnitude %>
     <%= f.input :home_avatar %>
-    <%= f.input :verification %>
-    <%= f.input :confirm %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <%= f.input :verification,:hint => "upload your image location<br/>jpg, jpeg and png only" %>
+    <h4>add contact number</h4>
+    <% f.simple_fields_for :contacts, :validate => true do |builder| %>
+      <% render "contact_fields", f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Add Contact", f, :contacts %>
+    <br/>
+    <br/>
+    <%= f.button :submit, "Update", :class => "btn btn-primary" %><%= link_to "back", :back, :class => "btn btn-danger back-btn" %>
 <% end %>
