@@ -14,5 +14,5 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   mount_uploader :identity_image, IdentityImageUploader
   
-  validates :email, :username, :firstname, :current_password, :presence => true
+  validates :email, :username, :firstname, :current_password, :presence => true ,:on => :update
 end

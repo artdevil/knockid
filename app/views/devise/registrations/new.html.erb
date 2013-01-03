@@ -6,7 +6,7 @@
     <%= f.input :username, :required => true, :autofocus => true, :input_html => {:class => "input-block-level"} %>
     <%= f.input :firstname, :required => true, :autofocus => true, :input_html => {:class => "input-block-level"} %>
     <%= f.input :lastname, :required => true, :autofocus => true, :input_html => {:class => "input-block-level"} %>
-    <%= f.input :birthday, :required => true, :autofocus => true, :input_html => {:class => "input-block-level"} %>
+    <%= f.input :birthday, :as => :string, :input_html => {:class => "datepicker input-block-level"} %>
     <%= f.input :password, :required => true, :input_html => {:class => "input-block-level"} %>
     <%= f.input :password_confirmation, :required => true, :input_html => {:class => "input-block-level"} %>
     <%= f.button :submit, "Sign up",:class => "btn btn-primary btn-large" %>
