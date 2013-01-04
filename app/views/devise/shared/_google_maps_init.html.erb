@@ -1,0 +1,90 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('form').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+  var map;
+  var geocoder= new google.maps.Geocoder();
+  var mapOptions;
+  var latLng;
+  var lat;
+  var lng;
+  var marker;
+  var position = new google.maps.LatLng(-6.916202,107.613779);
+  function createMarker(myLatlng, myMap, markerArray){
+    clearOverlays(markerArray);
+    marker = new google.maps.Marker({
+      position: myLatlng,
+      map: myMap
+    });
+    markerArray.push(marker);
+  };
+  
+  function clearOverlays(markerArray) {
+    var mark = markerArray;
+    if (mark) {
+      for (i in mark) {
+        mark[i].setMap(null);
+      }
+    }
+  }
+  
+  function clickGetCoordinate(myMap,mapForm, markerArray){
+    google.maps.event.addListener(myMap, 'click', function(event) {
+        latLng = event.latLng;
+        lat = latLng.lat();
+        lng = latLng.lng();
+        $(mapForm).parent().parent().find('.latitude').val(lat);
+        $(mapForm).parent().parent().find('.longnitude').val(lng);
+        $(mapForm).parent().parent().find('.address').val('');
+        position = new google.maps.LatLng(lat,lng);
+        createMarker(position, myMap, markerArray);
+        codeAddress(latLng,mapForm);
+    });
+  };
+  
+  function geolocation(myMap, mapForm, markerArray){
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(pos) {
+        position = new google.maps.LatLng(pos.coords.latitude,
+                                         pos.coords.longitude);
+        createMarker(position, myMap, markerArray);
+        myMap.setCenter(position);
+        $(mapForm).parent().parent().find('.latitude').val(pos.coords.latitude);
+        $(mapForm).parent().parent().find('.longnitude').val(pos.coords.longitude);
+        codeAddress(position,mapForm);
+      }, function() {
+        handleNoGeolocation(true);
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleNoGeolocation(false);
+    }
+  }
+  
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag) {
+      var content = 'Error: The Geolocation service failed.';
+    } else {
+      var content = 'Error: Your browser doesn\'t support geolocation.';
+    }
+  }
+  function codeAddress(latlng, mapform) {
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[1]) {
+          $(mapform).parent().parent().find('.address').val(results[1].formatted_address);
+        } else {
+          alert('your location is not provided');
+        }
+      } else {
+          alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+</script>

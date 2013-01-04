@@ -39,3 +39,10 @@ abbr{
 	color: white;
 	margin-left: 5px;
 }
+
+/* maps */
+#maps{
+  width: 100%;
+  margin-top: 20px;
+  height: 300px; 
+}

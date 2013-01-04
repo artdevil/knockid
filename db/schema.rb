@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20121216122622) do
     t.integer  "user_id"
     t.string   "address"
     t.string   "latitude"
-    t.string   "longnitude"
+    t.string   "longitude"
     t.string   "home_avatar"
     t.string   "verification"
     t.boolean  "confirm"
@@ -77,6 +77,10 @@ ActiveRecord::Schema.define(:version => 20121216122622) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "username"

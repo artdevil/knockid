@@ -1,0 +1,24 @@
+<script type="text/javascript">
+	$('#maps').ready(function(){
+		position = new google.maps.LatLng(-6.916202,107.613779);
+  mapOptions = {
+      zoom: 14,
+      center: position,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var markersArray = [];
+  var map = new google.maps.Map(document.getElementById('maps'), mapOptions);
+  createMarker(position, map, markersArray);
+  clickGetCoordinate(map,"#maps", markersArray);
+  var input = document.getElementById('location_address');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      var place = autocomplete.getPlace();
+      map.setCenter(place.geometry.location);
+      createMarker(place.geometry.location,map, markersArray);
+      $("#maps").parent().parent().find('.latitude').val(place.geometry.location.lat());
+      $("#maps").parent().parent().find('.longitude').val(place.geometry.location.lng());
+    });
+	});
+</script>

@@ -4,7 +4,7 @@ class CreateLocations < ActiveRecord::Migration
       t.integer :user_id
       t.string :address
       t.string :latitude
-      t.string :longnitude
+      t.string :longitude
       t.string :home_avatar
       t.string :verification
       t.boolean :confirm
