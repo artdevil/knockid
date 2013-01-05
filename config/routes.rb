@@ -1,6 +1,8 @@
 Knockid::Application.routes.draw do
+  
   resources :locations
   resources :pages
+  resources :friends
   root :to => "pages#home"
 
   devise_for :users

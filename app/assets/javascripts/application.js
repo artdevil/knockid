@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require nested_form
 //= require bootstrap
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require rails.validations.nested_form
 //= require toastr
-//= require_tree .
+	$('form').on('nested:fieldAdded', function(event) {
+  $(event.target).find(':input').enableClientSideValidations();
+});

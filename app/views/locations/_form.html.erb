@@ -2,7 +2,7 @@
 <%= render :partial => "shared/maps", :locals => {:location => @location }%>
 <div class="row">
     <div class="span4">
-        <%= simple_form_for(@location, :validate => true ) do |f| %>
+        <%= simple_nested_form_for @location, :validate => true do |f| %>
           <% @location.build_contacts unless @location.contacts %>
           <%= f.error_notification %>
             <%= f.input :address, :input_html => {:class => "address"} %>
@@ -11,10 +11,8 @@
             <%= f.input :home_avatar %>
             <%= f.input :verification,:hint => "upload your image location<br/>jpg, jpeg and png only" %>
             <h4>add contact number</h4>
-            <% f.simple_fields_for :contacts, :validate => true do |builder| %>
-              <% render "contact_fields", f: builder %>
-            <% end %>
-            <%= link_to_add_fields "Add Contact", f, :contacts %>
+            <%= f.simple_fields_for :contacts, :validate => true %>
+            <%= f.link_to_add "Add Contact", :contacts %>
             <br/>
             <br/>
     </div>

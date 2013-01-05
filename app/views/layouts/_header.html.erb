@@ -9,10 +9,36 @@
       <%= link_to 'knockid', root_path, :class => "brand" %>
         <div class="nav-collapse collapse">
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><%= link_to "Home", root_path %></li>
+            <li><a href="#">Maps</a></li>
+            <li><%= link_to 'Friends', friends_path %></li>
             <li><a href="#about">About</a></li>
-            <li><%= link_to "edit", edit_user_registration_path %></li>
-            <li><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
+          </ul>
+          <ul class="nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= image_tag current_user.avatar.url(:thumb), :height => "25px", :width => "25px" if current_user.avatar %>
+                <%= current_user.username %> &nbsp;
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li>
+                  <%= link_to edit_user_registration_path do %>
+                    <i class="icon-wrench"></i> Edit Profile
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to locations_path do %>
+                    <i class="icon-globe"></i> Location
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, :method => :delete do %>
+                    <i class="icon-off"></i> Logout
+                  <% end %>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>
