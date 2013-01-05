@@ -5,4 +5,8 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def maps
+  	@user = current_user
+  end
 end
