@@ -1,6 +1,9 @@
 <div class="row">
 	<div class="span3" data-spy="affix">
-		<%= render :partial => "navbar_right" %>
+		<%= render :partial => "navbar_right", :locals => {:f => @user } %>
+	</div><!-- span-->
+	<div class="span3" id="status_scrollup" data-spy="affix">
+		<%= render :partial => "navbar_right_status" %>
 	</div><!-- span-->
 	<!-- Modal status -->
 	<%= render :partial => "status/update_status" %>
@@ -9,8 +12,8 @@
 		<div class="row">
 			<%= render :partial => "progress_bar" %>
 		</div><!-- row -->
-		<div class="row">
-			<%= render :partial => "status_align" %>
+		<div class="row" id="status_align">
+			<%= render :partial => "status_align", :locals => {:location_tag => current_user.locations.find(1)} %>
 		</div><!-- row -->
 	</div><!-- span-->
 </div><!-- row -->

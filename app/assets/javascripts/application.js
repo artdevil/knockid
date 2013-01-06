@@ -21,3 +21,8 @@
 	$('form').on('nested:fieldAdded', function(event) {
   $(event.target).find(':input').enableClientSideValidations();
 });
+	$(document).ready(function(){
+		//$('#show_maps').click(function() {
+    //  alert('true');
+  	//});
+	});

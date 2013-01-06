@@ -5,8 +5,17 @@ Knockid::Application.routes.draw do
     collection do
       get 'maps'
     end
+
+    member do
+      get 'status_align'
+    end
   end
   resources :friends
+  resources :maps do
+    member do
+      get 'call_maps'
+    end
+  end
   root :to => "pages#home"
 
   devise_for :users

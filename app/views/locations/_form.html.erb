@@ -5,6 +5,7 @@
         <%= simple_nested_form_for @location, :validate => true do |f| %>
           <% @location.build_contacts unless @location.contacts %>
           <%= f.error_notification %>
+            <%= f.input :name %>
             <%= f.input :address, :input_html => {:class => "address"} %>
             <%= f.input :latitude, :input_html => {:class => "latitude"} %>
             <%= f.input :longitude, :input_html => {:class => "longitude"} %>

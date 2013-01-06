@@ -1,1 +1,19 @@
-<p>I'm in Section 1.</p>
+<div class="row">
+	<div class="span9">
+		<div id="maps_status"></div>
+	</div>
+</div>
+<script type="text/javascript">
+  $('#maps_status').ready(function(){
+    position = new google.maps.LatLng(<%= location.latitude+','+location.longitude %>);
+    mapOptions = {
+        zoom: 14,
+        center: position,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var markersArray = [];
+    var map = new google.maps.Map(document.getElementById('maps_status'), mapOptions);
+    createMarker(position, map, markersArray);
+    var currCenter = map.getCenter();
+  });
+</script>

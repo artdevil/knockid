@@ -1,14 +1,18 @@
+
+<%= render :partial => "shared/google_maps_init" %>
+<script type="text/javascript">
+</script>
 <div class="span9">
 	<div class="tabbable"> <!-- Only required for left/right tabs -->
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#tab1" data-toggle="tab">Maps</a></li>
-			<li><a href="#tab2" data-toggle="tab">Timeline</a></li>
+			<li class="active"><a data-target="#status_maps" data-toggle="tab">Maps</a><%#= link_to 'Maps', call_maps_map_path(location_tag),:remote => true,:id => "show_maps", :data => {"target" => "#maps", "toggle" => "tab"}%></li>
+			<li><a data-target="#timeline" data-toggle="tab">Timeline</a></li>
 		</ul>
 	<div class="tab-content">
-			<div class="tab-pane active" id="tab1">
-				<%= render :partial => "maps/status" %>
+			<div class="tab-pane active" id="status_maps">
+				<%= render :partial => "maps/status",:locals => {:location => location_tag} %>
 			</div>
-			<div class="tab-pane" id="tab2">
+			<div class="tab-pane" id="timeline">
 				<%= render :partial => "timelines/status" %>
 			</div>
 		</div>

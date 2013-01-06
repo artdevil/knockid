@@ -1,8 +1,16 @@
 <div class="well">
 	<ul class="nav nav-list">
 		<li class="nav-header">Location User</li>
-		<li class="active"><a href="#">neighbour 1</a></li>
-		<li><a href="#">neighbour 2</a></li>
+		<% f.locations.each do |n| %>
+			<li><%= link_to n.name,status_align_page_path(n), :remote => true %></li>
+		<% end %>
+		<li>
+		<% if f.locations.length < 2 %>
+			<%= link_to new_location_path do %>
+				<li><label class="icon-plus"></label> Add more location</li>
+			<% end %>		
+		<% end %>
+		</li>
 		<li class="nav-header">Label search</li>
 		<li><a href="#"><span class="label label-success">Ask</span></a></li>
 		<li><a href="#">Buy</a></li>

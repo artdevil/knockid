@@ -46,3 +46,17 @@ abbr{
   margin-top: 20px;
   height: 300px; 
 }
+
+#maps_status{
+  width: 100%;
+  height: 500px;
+}
+
+/* status */
+#status_scrollup{
+  margin-top: 270px;
+}
+
+.nav.nav-tabs li{
+  cursor: pointer;
+}
